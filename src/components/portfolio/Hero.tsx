@@ -27,11 +27,10 @@ const Hero = () => {
         <span className="blob blob-5" />
         <span className="blob blob-6" />
       </div>
-      <div className="absolute inset-0 hero-grid z-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none z-0" />
 
       <div className="container-narrow relative z-10 py-32 w-full">
-        <div className="max-w-3xl fade-in-up">
+        <div className="max-w-3xl mx-auto fade-in-up flex flex-col items-center text-center">
           <div className="label-mint mb-6">Frontend Developer · Cognizant</div>
 
           <h1
