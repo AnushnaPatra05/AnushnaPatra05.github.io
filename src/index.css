@@ -248,88 +248,103 @@
 
   /* Project / Contact / large card */
   .glass-card {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
     border: 0.5px solid rgba(255,255,255,0.10);
-    -webkit-backdrop-filter: blur(16px) saturate(150%);
-    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 0.5px 0 rgba(255,255,255,0.08);
     transition: all 250ms ease;
   }
   html.light .glass-card {
-    background: rgba(255,255,255,0.55);
-    border-color: rgba(255,255,255,0.70);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.08);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.04);
   }
   .glass-card-hover:hover {
-    background: rgba(255,255,255,0.09);
-    border-color: rgba(62,207,164,0.35);
-    transform: translateY(-4px);
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(62,207,164,0.30);
+    transform: translateY(-3px);
   }
   html.light .glass-card-hover:hover {
-    background: rgba(255,255,255,0.75);
-    border-color: rgba(62,207,164,0.40);
+    background: #ffffff;
+    border-color: rgba(62,207,164,0.25);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
   }
 
   /* Skill / timeline category card */
   .glass-panel {
-    background: rgba(255,255,255,0.04);
-    border: 0.5px solid rgba(255,255,255,0.09);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    border-radius: 14px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(255,255,255,0.10);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 0.5px 0 rgba(255,255,255,0.08);
     transition: all 250ms ease;
   }
   html.light .glass-panel {
-    background: rgba(255,255,255,0.50);
-    border-color: rgba(255,255,255,0.65);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.08);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.04);
   }
 
   /* Certification card */
   .glass-cert {
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.06);
     border: 0.5px solid rgba(255,255,255,0.10);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-    border-radius: 14px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 0.5px 0 rgba(255,255,255,0.08);
     transition: all 250ms ease;
   }
+  .glass-cert:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(62,207,164,0.30);
+  }
   html.light .glass-cert {
-    background: rgba(255,255,255,0.55);
-    border-color: rgba(255,255,255,0.68);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.08);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.04);
+  }
+  html.light .glass-cert:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    border-color: rgba(62,207,164,0.25);
   }
 
   /* Skill pill */
   .glass-pill {
     display: inline-flex;
     align-items: center;
-    background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.08);
     border: 0.5px solid rgba(255,255,255,0.12);
     color: #ffffff;
     border-radius: 999px;
     padding: 4px 14px;
     font-size: 12px;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
     transition: all 200ms ease;
   }
   .glass-pill:hover {
-    background: rgba(62,207,164,0.15);
+    background: rgba(62,207,164,0.12);
     border-color: rgba(62,207,164,0.30);
     color: #3ECFA4;
   }
   html.light .glass-pill {
-    background: rgba(255,255,255,0.60);
+    background: #f3f4f6;
     border-color: rgba(0,0,0,0.08);
-    color: #111111;
+    color: #374151;
   }
   html.light .glass-pill:hover {
     background: rgba(62,207,164,0.12);
-    color: #0a6e56;
+    border-color: rgba(62,207,164,0.30);
+    color: #3ECFA4;
   }
 
   /* Glass buttons */
@@ -380,22 +395,43 @@
 
   /* Glass form input */
   .glass-input {
-    background: rgba(255,255,255,0.06) !important;
-    border: 0.5px solid rgba(255,255,255,0.10) !important;
+    background: rgba(255,255,255,0.07) !important;
+    border: 0.5px solid rgba(255,255,255,0.12) !important;
     color: #ffffff !important;
-    border-radius: 10px !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
     transition: all 200ms ease;
   }
+  .glass-input::placeholder {
+    color: rgba(255,255,255,0.40);
+  }
   html.light .glass-input {
-    background: rgba(255,255,255,0.55) !important;
+    background: #f9fafb !important;
     border-color: rgba(0,0,0,0.10) !important;
     color: #111111 !important;
+  }
+  html.light .glass-input::placeholder {
+    color: #9ca3af;
   }
   .glass-input:focus,
   .glass-input:focus-visible {
     border-color: #3ECFA4 !important;
     outline: none !important;
     box-shadow: 0 0 0 3px rgba(62,207,164,0.15) !important;
+  }
+  html.light .glass-input:focus,
+  html.light .glass-input:focus-visible {
+    box-shadow: 0 0 0 3px rgba(62,207,164,0.12) !important;
+  }
+
+  /* Page loader progress bar */
+  @keyframes progressBar {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+  @keyframes fadeInLoader {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   /* Floating blobs (hero) */

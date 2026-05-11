@@ -33,7 +33,7 @@ const About = () => {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="p-6 rounded-xl bg-card border border-subtle hover:border-mint transition-smooth"
+                className="p-6 glass-panel glass-card-hover"
               >
                 <div className="text-2xl md:text-3xl font-bold text-foreground mb-1 break-words">
                   {s.value}
