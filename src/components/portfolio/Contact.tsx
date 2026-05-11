@@ -111,8 +111,8 @@ const Contact = () => {
             )}
             <form
               onSubmit={onSubmit}
-              className="reveal"
-              style={{ backgroundColor: "#2A2A2D", borderRadius: "12px", padding: "32px" }}
+              className="reveal glass-card"
+              style={{ padding: "32px" }}
               noValidate
             >
               <div className="space-y-5">
@@ -127,7 +127,7 @@ const Contact = () => {
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Your full name"
                     maxLength={100}
-                    className="mt-1.5 bg-background border-subtle text-foreground"
+                    className="mt-1.5 glass-input"
                   />
                   {errors.name && <p className="text-sm text-destructive mt-1.5">{errors.name}</p>}
                 </div>
@@ -143,7 +143,7 @@ const Contact = () => {
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="you@example.com"
                     maxLength={255}
-                    className="mt-1.5 bg-background border-subtle text-foreground"
+                    className="mt-1.5 glass-input"
                   />
                   {errors.email && <p className="text-sm text-destructive mt-1.5">{errors.email}</p>}
                 </div>
@@ -159,13 +159,13 @@ const Contact = () => {
                     placeholder="Tell me about your project or opportunity..."
                     rows={4}
                     maxLength={1000}
-                    className="mt-1.5 bg-background border-subtle text-foreground resize-none"
+                    className="mt-1.5 glass-input resize-none"
                   />
                   {errors.message && (
                     <p className="text-sm text-destructive mt-1.5">{errors.message}</p>
                   )}
                 </div>
-                <Button type="submit" variant="mint" size="lg" className="w-full" disabled={submitting}>
+                <Button type="submit" size="lg" className="w-full glass-btn-primary" disabled={submitting}>
                   {submitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
