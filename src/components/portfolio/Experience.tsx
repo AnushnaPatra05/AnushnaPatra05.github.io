@@ -1,14 +1,14 @@
+import { useEffect, useRef, useState } from "react";
+
 const entries = [
   {
-    current: true,
-    role: "Programmer Analyst",
+    role: "Intern",
     company: "Cognizant Technology Solutions",
-    period: "2024 – Present",
+    period: "Jan 2023 – Mid 2023",
     bullets: [
-      "Leading Angular feature development for enterprise-scale client applications",
-      "Implementing NgRx state management and complex RxJS data pipelines",
-      "Conducting code reviews and mentoring junior developers",
-      "Collaborating with cross-functional teams on REST API integration",
+      "Onboarded into Angular ecosystem and enterprise codebase",
+      "Contributed to UI bug fixes, component styling, and feature enhancements",
+      "Gained hands-on experience with Agile/Scrum workflows",
     ],
   },
   {
@@ -23,32 +23,55 @@ const entries = [
     ],
   },
   {
-    role: "Intern",
+    current: true,
+    role: "Programmer Analyst",
     company: "Cognizant Technology Solutions",
-    period: "Jan 2023 – Mid 2023",
+    period: "2024 – Present",
     bullets: [
-      "Onboarded into Angular ecosystem and enterprise codebase",
-      "Contributed to UI bug fixes, component styling, and feature enhancements",
-      "Gained hands-on experience with Agile/Scrum workflows",
+      "Leading Angular feature development for enterprise-scale client applications",
+      "Implementing NgRx state management and complex RxJS data pipelines",
+      "Conducting code reviews and mentoring junior developers",
+      "Collaborating with cross-functional teams on REST API integration",
     ],
   },
 ];
 
 const Experience = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setActive(true);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section id="experience" className="section-padding bg-background">
       <div className="container-narrow">
         <div className="reveal mb-12">
           <div className="label-mint mb-3">Experience</div>
-          <h2 className="text-3xl md:text-[36px] font-bold text-foreground">My Journey</h2>
+          <h2 className="text-3xl md:text-[36px] font-bold gradient-text">My Journey</h2>
         </div>
 
-        <div className="relative max-w-3xl">
-          <div className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-mint" />
+        <div ref={sectionRef} className={`relative max-w-3xl ${active ? "timeline-active" : ""}`}>
+          <div className="timeline-line absolute left-[7px] top-2 bottom-2 w-0.5 bg-mint" />
 
           <div className="space-y-10">
             {entries.map((e, i) => (
-              <div key={i} className="reveal relative pl-10">
+              <div key={i} className="timeline-entry relative pl-10">
                 <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-mint ring-4 ring-background" />
 
                 <div className="p-6 rounded-xl bg-card border border-subtle hover:border-mint/50 transition-smooth">

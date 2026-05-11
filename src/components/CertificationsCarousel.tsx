@@ -66,7 +66,7 @@ const CertificationsCarousel = () => {
       <div className="container-narrow">
         <div className="reveal mb-10">
           <div className="label-mint mb-3">Certifications</div>
-          <h2 className="text-3xl md:text-[36px] font-bold text-foreground mb-3">Certifications</h2>
+          <h2 className="text-3xl md:text-[36px] font-bold gradient-text mb-3">Certifications</h2>
           <p style={{ color: "#A0A0A0", fontSize: "14px" }}>Credentials &amp; courses I've completed.</p>
         </div>
 

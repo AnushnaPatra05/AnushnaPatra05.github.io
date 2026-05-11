@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 const links = [
   { to: "/", label: "Home" },
@@ -11,28 +12,37 @@ const links = [
 ];
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => setOpen(false), [pathname]);
 
-  return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-smooth ${
-        scrolled ? "bg-background/85 backdrop-blur-md border-b border-subtle" : "bg-transparent"
-      }`}
+  const ThemeToggle = (
+    <button
+      onClick={toggleTheme}
+      aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+      className="grid place-items-center transition-smooth"
+      style={{
+        width: 36,
+        height: 36,
+        borderRadius: "9999px",
+        backgroundColor: "rgba(255,255,255,0.08)",
+        border: "0.5px solid rgba(255,255,255,0.12)",
+        color: "hsl(var(--mint))",
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.15)")}
+      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)")}
     >
+      {theme === "dark" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
+    </button>
+  );
+
+  return (
+    <header className="fixed top-0 inset-x-0 z-50 navbar-glass">
       <nav className="container-narrow flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2.5">
-          <span className="w-9 h-9 rounded-md border border-mint text-mint grid place-items-center font-bold tracking-tight">
+          <span className="w-9 h-9 rounded-md border border-mint grid place-items-center font-bold tracking-tight gradient-text">
             AP
           </span>
           <span className="font-semibold text-foreground hidden sm:inline">Anushna Patra</span>
@@ -62,15 +72,19 @@ const Navbar = () => {
               Contact
             </a>
           </li>
+          <li>{ThemeToggle}</li>
         </ul>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="lg:hidden p-2 text-foreground"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          {ThemeToggle}
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="p-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </nav>
 
       {open && (

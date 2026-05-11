@@ -50,7 +50,7 @@ const Skills = ({ id = "skills" }: { id?: string }) => {
       <div className="container-narrow">
         <div className="reveal mb-12">
           <div className="label-mint mb-3">Skills</div>
-          <h2 className="text-3xl md:text-[36px] font-bold text-foreground">What I work with</h2>
+          <h2 className="text-3xl md:text-[36px] font-bold gradient-text">What I work with</h2>
         </div>
 
         <div
