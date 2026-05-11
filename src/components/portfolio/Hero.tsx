@@ -27,11 +27,10 @@ const Hero = () => {
         <span className="blob blob-5" />
         <span className="blob blob-6" />
       </div>
-      <div className="absolute inset-0 hero-grid z-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none z-0" />
 
       <div className="container-narrow relative z-10 py-32 w-full">
-        <div className="max-w-3xl fade-in-up">
+        <div className="max-w-3xl mx-auto fade-in-up flex flex-col items-center text-center">
           <div className="label-mint mb-6">Frontend Developer · Cognizant</div>
 
           <h1
@@ -57,11 +56,11 @@ const Hero = () => {
             ))}
           </div>
 
-          <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed gradient-text font-medium">
+          <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed gradient-text font-medium mx-auto">
             3 years building reactive, scalable Angular applications at Cognizant.
           </p>
 
-          <div className="flex flex-wrap gap-4 mb-10">
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
             <Button asChild variant="mint" size="lg">
               <Link to="/projects">
                 View My Work
@@ -76,7 +75,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="h-0.5 w-[60px] bg-mint" />
+          <div className="h-0.5 w-[60px] bg-mint mx-auto" />
         </div>
       </div>
 

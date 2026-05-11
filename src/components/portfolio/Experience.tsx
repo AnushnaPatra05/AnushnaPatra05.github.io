@@ -52,7 +52,7 @@ const Experience = () => {
           }
         });
       },
-      { threshold: 0.2 },
+      { threshold: 0.15 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -72,7 +72,7 @@ const Experience = () => {
           <div className="space-y-10">
             {entries.map((e, i) => (
               <div key={i} className="timeline-entry relative pl-10">
-                <span className="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-mint ring-4 ring-background" />
+                <span className="timeline-dot absolute left-0 top-1.5 w-4 h-4 rounded-full bg-mint ring-4 ring-background" />
 
                 <div className="p-6 rounded-xl bg-card border border-subtle hover:border-mint/50 transition-smooth">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
