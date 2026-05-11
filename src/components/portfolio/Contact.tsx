@@ -88,7 +88,7 @@ const Contact = () => {
       <div className="container-narrow">
         <div className="reveal max-w-2xl mx-auto text-center mb-10">
           <div className="label-mint mb-3">Contact</div>
-          <h2 className="text-3xl md:text-[36px] font-bold text-foreground mb-4">Let's connect</h2>
+          <h2 className="text-3xl md:text-[36px] font-bold gradient-text mb-4">Let's connect</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 items-center">

@@ -24,7 +24,7 @@ const Projects = ({ showHeader = true, id = "projects" }: Props) => {
         {showHeader && (
           <div className="reveal mb-12">
             <div className="label-mint mb-3">Projects</div>
-            <h2 className="text-3xl md:text-[36px] font-bold text-foreground">Selected work</h2>
+            <h2 className="text-3xl md:text-[36px] font-bold gradient-text">Selected work</h2>
           </div>
         )}
 
