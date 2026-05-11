@@ -244,29 +244,43 @@
 
   /* Timeline animations */
   .timeline-line {
-    transform: scaleY(0);
-    transform-origin: top;
+    height: 0;
+    bottom: auto !important;
+    transform-origin: top center;
   }
   .timeline-active .timeline-line {
-    animation: timelineDraw 1.2s ease-out forwards;
+    animation: timelineDraw 1.5s ease-out forwards;
   }
   @keyframes timelineDraw {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
+    from { height: 0; }
+    to { height: calc(100% - 1rem); }
   }
 
   .timeline-entry {
     opacity: 0;
     transform: translateY(30px);
   }
-  .timeline-active .timeline-entry {
-    animation: timelineEntry 0.7s ease-out forwards;
+  .timeline-dot {
+    transform: scale(0);
+    transform-origin: center;
   }
-  .timeline-active .timeline-entry:nth-child(1) { animation-delay: 0.3s; }
-  .timeline-active .timeline-entry:nth-child(2) { animation-delay: 0.7s; }
-  .timeline-active .timeline-entry:nth-child(3) { animation-delay: 1.1s; }
+  .timeline-active .timeline-entry {
+    animation: timelineEntry 0.6s ease-out forwards;
+  }
+  .timeline-active .timeline-dot {
+    animation: timelineDot 0.4s ease-out forwards;
+  }
+  .timeline-active .timeline-entry:nth-child(1),
+  .timeline-active .timeline-entry:nth-child(1) .timeline-dot { animation-delay: 0.4s; }
+  .timeline-active .timeline-entry:nth-child(2),
+  .timeline-active .timeline-entry:nth-child(2) .timeline-dot { animation-delay: 0.9s; }
+  .timeline-active .timeline-entry:nth-child(3),
+  .timeline-active .timeline-entry:nth-child(3) .timeline-dot { animation-delay: 1.4s; }
   @keyframes timelineEntry {
     to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes timelineDot {
+    to { transform: scale(1); }
   }
 
   /* Copyright watermark */
