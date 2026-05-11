@@ -99,14 +99,11 @@ const CertificationsCarousel = () => {
               <button
                 key={cert.id}
                 onClick={() => setSelected(cert)}
-                className="reveal group transition-smooth text-left"
+                className="reveal group transition-smooth text-left glass-cert"
                 style={{
                   width: `${CARD_WIDTH}px`,
                   height: "200px",
                   flexShrink: 0,
-                  backgroundColor: "#2A2A2D",
-                  border: "0.5px solid rgba(255,255,255,0.08)",
-                  borderRadius: "12px",
                   padding: "20px",
                   paddingTop: "23px",
                   position: "relative",
@@ -118,11 +115,9 @@ const CertificationsCarousel = () => {
                   gap: "10px",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#3ECFA4";
                   e.currentTarget.style.transform = "translateY(-3px)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
                   e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
