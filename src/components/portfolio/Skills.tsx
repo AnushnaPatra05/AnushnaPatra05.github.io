@@ -60,13 +60,8 @@ const Skills = ({ id = "skills" }: { id?: string }) => {
           {groups.map((g) => (
             <div
               key={g.title}
-              className="reveal"
-              style={{
-                backgroundColor: "#2A2A2D",
-                border: "0.5px solid rgba(255,255,255,0.08)",
-                borderRadius: "12px",
-                padding: "20px 24px",
-              }}
+              className="reveal glass-panel"
+              style={{ padding: "20px 24px" }}
             >
               <div
                 className="text-mint uppercase"
@@ -81,18 +76,7 @@ const Skills = ({ id = "skills" }: { id?: string }) => {
               </div>
               <div className="flex flex-wrap" style={{ gap: "8px" }}>
                 {g.items.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center text-foreground"
-                    style={{
-                      backgroundColor: "rgba(255,255,255,0.06)",
-                      border: "0.5px solid rgba(255,255,255,0.12)",
-                      fontSize: "12px",
-                      fontWeight: 400,
-                      borderRadius: "999px",
-                      padding: "4px 12px",
-                    }}
-                  >
+                  <span key={item} className="glass-pill">
                     {item}
                   </span>
                 ))}
