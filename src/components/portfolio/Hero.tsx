@@ -19,15 +19,23 @@ const Hero = () => {
       id="hero"
       className="relative min-h-screen flex items-center bg-background overflow-hidden"
     >
-      <div className="absolute inset-0 hero-grid" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <span className="blob blob-1" />
+        <span className="blob blob-2" />
+        <span className="blob blob-3" />
+        <span className="blob blob-4" />
+        <span className="blob blob-5" />
+        <span className="blob blob-6" />
+      </div>
+      <div className="absolute inset-0 hero-grid z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none z-0" />
 
       <div className="container-narrow relative z-10 py-32 w-full">
         <div className="max-w-3xl fade-in-up">
           <div className="label-mint mb-6">Frontend Developer · Cognizant</div>
 
           <h1
-            className="text-white font-extrabold tracking-tight mb-5"
+            className="font-extrabold tracking-tight mb-5 gradient-text"
             style={{ fontSize: "clamp(40px, 8vw, 64px)", lineHeight: 1.05, fontWeight: 800 }}
           >
             Anushna Patra
@@ -49,7 +57,7 @@ const Hero = () => {
             ))}
           </div>
 
-          <p className="text-base md:text-lg text-secondary-muted max-w-2xl mb-10 leading-relaxed">
+          <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed gradient-text font-medium">
             3 years building reactive, scalable Angular applications at Cognizant.
           </p>
 
