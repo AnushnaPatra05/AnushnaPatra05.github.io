@@ -56,11 +56,11 @@ const Hero = () => {
             ))}
           </div>
 
-          <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed gradient-text font-medium">
+          <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed gradient-text font-medium mx-auto">
             3 years building reactive, scalable Angular applications at Cognizant.
           </p>
 
-          <div className="flex flex-wrap gap-4 mb-10">
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
             <Button asChild variant="mint" size="lg">
               <Link to="/projects">
                 View My Work
@@ -75,7 +75,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="h-0.5 w-[60px] bg-mint" />
+          <div className="h-0.5 w-[60px] bg-mint mx-auto" />
         </div>
       </div>
 
