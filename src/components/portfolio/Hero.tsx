@@ -61,13 +61,13 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <Button asChild variant="mint" size="lg">
+            <Button asChild size="lg" className="glass-btn-primary hover:bg-transparent">
               <Link to="/projects">
                 View My Work
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>
-            <Button asChild variant="outlineLight" size="lg">
+            <Button asChild size="lg" className="glass-btn-secondary hover:bg-transparent">
               <a href={CV_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer">
                 <Download className="w-4 h-4" />
                 Download CV
