@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, ChevronDown } from "lucide-react";
+import { ArrowRight, Download, ChevronDown, ImageIcon } from "lucide-react";
 import { CV_DOWNLOAD_URL } from "@/config/cv";
 
 const roles = ["Programmer Analyst", "Angular Developer", "UI Engineer", "Problem Solver"];
@@ -19,56 +19,51 @@ const Hero = () => {
       id="hero"
       className="relative min-h-screen flex items-center bg-background overflow-hidden"
     >
-      {/* Aurora borealis layer */}
-      <div className="aurora-layer absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="aurora-band aurora-band-1" />
-        <div className="aurora-band aurora-band-2" />
-        <div className="aurora-band aurora-band-3" />
-        <div className="aurora-band aurora-band-4" />
+      {/* Aurora borealis background */}
+      <div className="aurora-bg">
+        <div className="aurora-band a1" />
+        <div className="aurora-band a2" />
+        <div className="aurora-band a3" />
+        <div className="aurora-band a4" />
       </div>
 
-      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
-        <span className="blob blob-1" />
-        <span className="blob blob-2" />
-        <span className="blob blob-3" />
-        <span className="blob blob-4" />
-        <span className="blob blob-5" />
-        <span className="blob blob-6" />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none z-[1]" />
-
-      <div className="container-narrow relative z-10 py-32 w-full">
-        <div className="max-w-3xl mx-auto fade-in-up flex flex-col items-center text-center">
+      <div className="hero-split relative z-[2] w-full">
+        {/* LEFT */}
+        <div className="hero-left fade-in-up">
           <div className="label-mint mb-6">Frontend Developer · Cognizant</div>
 
           <h1
             className="font-extrabold tracking-tight mb-5 gradient-text"
-            style={{ fontSize: "clamp(40px, 8vw, 64px)", lineHeight: 1.05, fontWeight: 800 }}
+            style={{ fontSize: "clamp(36px, 6vw, 58px)", lineHeight: 1.05, fontWeight: 800 }}
           >
             Anushna Patra
           </h1>
 
           <div
-            className="h-10 md:h-12 mb-6 relative overflow-hidden"
-            style={{ fontSize: "clamp(20px, 3vw, 28px)" }}
+            className="relative mb-6 overflow-hidden"
+            style={{ height: 44, fontSize: "clamp(20px, 2.4vw, 26px)" }}
           >
             {roles.map((r, i) => (
               <span
                 key={r}
-                className={`absolute inset-0 text-mint font-normal transition-all duration-500 ${
-                  i === idx ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                }`}
+                className="absolute inset-0 font-normal"
+                style={{
+                  color: "#3ECFA4",
+                  transition: "opacity 280ms ease, transform 280ms ease",
+                  opacity: i === idx ? 1 : 0,
+                  transform: i === idx ? "translateY(0)" : "translateY(-8px)",
+                }}
               >
                 {r}
               </span>
             ))}
           </div>
 
-          <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed gradient-text font-medium mx-auto">
+          <p className="text-base mb-8 leading-relaxed" style={{ color: "#A0A0A0" }}>
             3 years building reactive, scalable Angular applications at Cognizant.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
+          <div className="flex flex-wrap gap-4 mb-6">
             <Button asChild size="lg" className="glass-btn-primary hover:bg-transparent">
               <Link to="/projects">
                 View My Work
@@ -83,13 +78,67 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="h-0.5 w-[60px] bg-mint mx-auto" />
+          <div style={{ width: 60, height: 2, background: "#3ECFA4", borderRadius: 1, marginTop: 8 }} />
+        </div>
+
+        {/* RIGHT */}
+        <div className="hero-right">
+          {/* Replace this div with <img src="/profile.jpg" /> when ready */}
+          <div
+            className="profile-photo"
+            style={{
+              width: 220,
+              height: 220,
+              borderRadius: "50%",
+              border: "2px solid rgba(62,207,164,0.40)",
+              boxShadow: "0 0 40px rgba(62,207,164,0.15), 0 0 80px rgba(168,85,247,0.10)",
+              background: "rgba(255,255,255,0.05)",
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 8,
+            }}
+          >
+            <ImageIcon className="w-6 h-6" style={{ color: "#A0A0A0" }} />
+            <span style={{ color: "#A0A0A0", fontSize: 12 }}>Upload your photo</span>
+          </div>
+
+          <div className="glass-card" style={{ padding: 24, width: "100%" }}>
+            <h3 style={{ color: "#fff", fontSize: 16, fontWeight: 600, marginBottom: 10 }}>
+              Who I Am
+            </h3>
+            <div style={{ color: "#A0A0A0", fontSize: 13, lineHeight: 1.7 }}>
+              <p>I'm Anushna Patra, a Programmer Analyst at Cognizant with 3 years of hands-on Angular experience.</p>
+              <p>I specialise in reactive architecture — Reactive Forms, RxJS streams, and NgRx state management.</p>
+              <p>Passionate about clean code, scalable UI, and delivering smooth user experiences.</p>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {["3+ Years", "Angular Expert", "Cognizant", "B.Tech 2023"].map((s) => (
+                <span
+                  key={s}
+                  style={{
+                    background: "rgba(62,207,164,0.10)",
+                    border: "0.5px solid rgba(62,207,164,0.25)",
+                    color: "#3ECFA4",
+                    borderRadius: 999,
+                    fontSize: 11,
+                    padding: "3px 12px",
+                  }}
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       <a
-        href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-mint animate-bounce-down"
+        href="#skills"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-mint animate-bounce-down z-[3]"
         aria-label="Scroll down"
       >
         <ChevronDown className="w-6 h-6" />
