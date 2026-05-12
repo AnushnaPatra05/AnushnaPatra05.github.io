@@ -19,7 +19,15 @@ const Hero = () => {
       id="hero"
       className="relative min-h-screen flex items-center bg-background overflow-hidden"
     >
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* Aurora borealis layer */}
+      <div className="aurora-layer absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="aurora-band aurora-band-1" />
+        <div className="aurora-band aurora-band-2" />
+        <div className="aurora-band aurora-band-3" />
+        <div className="aurora-band aurora-band-4" />
+      </div>
+
+      <div className="absolute inset-0 z-[1] overflow-hidden pointer-events-none">
         <span className="blob blob-1" />
         <span className="blob blob-2" />
         <span className="blob blob-3" />
@@ -27,7 +35,7 @@ const Hero = () => {
         <span className="blob blob-5" />
         <span className="blob blob-6" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none z-[1]" />
 
       <div className="container-narrow relative z-10 py-32 w-full">
         <div className="max-w-3xl mx-auto fade-in-up flex flex-col items-center text-center">
