@@ -79,7 +79,7 @@ const Hero = () => {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url(/slides/office.jpg)",
+            backgroundImage: "url(public/ctsoffice.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundColor: "#003d2e",
@@ -105,7 +105,7 @@ const Hero = () => {
           }}
         >
           <img
-            src="/slides/cognizant-logo.png"
+            src="public/ctslogo.jpg"
             alt="Cognizant"
             style={{ height: 28, width: "auto", objectFit: "contain", opacity: 0.9 }}
             onError={(e) => {
