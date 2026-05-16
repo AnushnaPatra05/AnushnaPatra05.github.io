@@ -530,7 +530,7 @@ const Hero = () => {
   gap: 24px;
 
   padding:
-    40px
+    30px
     24px
     350px;
             }
@@ -539,7 +539,7 @@ const Hero = () => {
               width: 190px;
               height: 190px;
 
-              margin-top: 315px;
+              margin-top: 20px;
             }
 
             .profile-image {
@@ -561,8 +561,8 @@ const Hero = () => {
           .cts-logo-wrap {
             position: absolute;
 
-            top: 42px;
-            right: 60px;
+            top: 24px;
+            right: 24px;
 
             z-index: 5;
           }
