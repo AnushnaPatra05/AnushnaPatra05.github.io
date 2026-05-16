@@ -174,7 +174,7 @@ const Hero = () => {
           </h3>
           <div className="tech-grid" style={{ width: "100%", maxWidth: 760, margin: "0 auto" }}>
             {techLogos.map((t) => (
-              <TechItem key={t.label} src={t.src} label={t.label} />
+              <TechItem key={t.label} src={t.src} label={t.label} textPill={t.textPill} />
             ))}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
               <span
