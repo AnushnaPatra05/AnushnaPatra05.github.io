@@ -38,7 +38,7 @@ const techLogos: TechLogo[] = [
   { src: "/karma-jasmine.jpg", label: "Karma & Jasmine" },
 
   // IMPORTANT
-  { src: "/ngrx.jpg", label: "NgRx" },
+  { src: "/NGRX.jpg", label: "NgRx" },
 
   { src: "/bootstrap.jpg", label: "Bootstrap" },
   { src: "/github.png", label: "GitHub" },
@@ -84,7 +84,9 @@ const Hero = () => {
         background: "#0B1020",
       }}
     >
+      {/* ====================================== */}
       {/* ARROWS */}
+      {/* ====================================== */}
 
       <button
         onClick={goPrev}
@@ -110,6 +112,8 @@ const Hero = () => {
         <div className="hero-bg" />
 
         <div className="hero-about-container">
+          {/* PROFILE IMAGE */}
+
           <div className="profile-image-wrap">
             <img
               src="/photoANUSHNA.jpg"
@@ -117,6 +121,8 @@ const Hero = () => {
               className="profile-image"
             />
           </div>
+
+          {/* CONTENT */}
 
           <div className="hero-about-content">
             <div className="hero-small-title">
@@ -210,12 +216,24 @@ const Hero = () => {
         />
       </Slide>
 
+      {/* ====================================== */}
+      {/* SCROLL ICON */}
+      {/* ====================================== */}
+
       <a href="#skills" className="scroll-down">
         <ChevronDown className="w-6 h-6" />
       </a>
 
+      {/* ====================================== */}
+      {/* STYLES */}
+      {/* ====================================== */}
+
       <style>
         {`
+          /* ====================================== */
+          /* GLOBAL BACKGROUND */
+          /* ====================================== */
+
           .hero-bg {
             position: absolute;
             inset: 0;
@@ -230,7 +248,7 @@ const Hero = () => {
           }
 
           /* ====================================== */
-          /* ABOUT */
+          /* ABOUT SECTION */
           /* ====================================== */
 
           .hero-about-container {
@@ -260,10 +278,12 @@ const Hero = () => {
 
             flex-shrink: 0;
 
-            margin-top: 30px;
+            margin-top: 40px;
 
             border:
               2px solid rgba(62,207,164,0.45);
+
+            background: rgba(255,255,255,0.04);
 
             box-shadow:
               0 0 40px rgba(62,207,164,0.15),
@@ -277,7 +297,7 @@ const Hero = () => {
             object-fit: cover;
 
             /* FIXED */
-            object-position: center 15%;
+            object-position: center 12%;
 
             transform: scale(1);
           }
@@ -351,12 +371,12 @@ const Hero = () => {
 
             background-repeat: no-repeat;
 
-            /* FIXED */
             background-size: cover;
 
-            background-position: center center;
+            /* FIXED */
+            background-position: center 22%;
 
-            transform: scale(1.02);
+            transform: scale(1.01);
           }
 
           .cognizant-overlay {
@@ -366,10 +386,18 @@ const Hero = () => {
             background:
               linear-gradient(
                 to top,
-                rgba(0,0,0,0.88) 0%,
-                rgba(0,0,0,0.35) 45%,
-                rgba(0,0,0,0.18) 100%
+                rgba(3, 7, 18, 0.92) 0%,
+                rgba(3, 7, 18, 0.55) 38%,
+                rgba(3, 7, 18, 0.22) 100%
+              ),
+
+              linear-gradient(
+                to right,
+                rgba(11,16,32,0.40),
+                rgba(11,16,32,0.12)
               );
+
+            backdrop-filter: blur(1.5px);
           }
 
           .cts-logo-wrap {
@@ -383,6 +411,8 @@ const Hero = () => {
 
           .cts-logo {
             height: 34px;
+            object-fit: contain;
+            opacity: 0.92;
           }
 
           /* ====================================== */
@@ -527,7 +557,7 @@ const Hero = () => {
               width: 190px;
               height: 190px;
 
-              margin-top: 50px;
+              margin-top: 60px;
             }
 
             .profile-image {
@@ -620,13 +650,19 @@ const TechItem = ({
           justifyContent: "center",
 
           backdropFilter: "blur(10px)",
+
+          boxShadow:
+            "0 6px 24px rgba(0,0,0,0.25)",
         }}
       >
         {!errored && src ? (
           <img
             src={src}
             alt={label}
-            onError={() => setErrored(true)}
+            onError={() => {
+              console.log("IMAGE FAILED:", src);
+              setErrored(true);
+            }}
             style={{
               width: 42,
               height: 42,
@@ -723,6 +759,62 @@ const SlideOverlay = ({
       >
         {roles[activeIndex]}
       </div>
+
+      {/* BUTTONS */}
+
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+
+          gap: 14,
+          marginTop: 8,
+        }}
+      >
+        <button
+          onClick={scrollToProjects}
+          style={{
+            border: "1.5px solid #3ECFA4",
+            background: "transparent",
+            color: "#3ECFA4",
+
+            borderRadius: 999,
+
+            padding: "12px 28px",
+
+            fontSize: 14,
+            fontWeight: 600,
+
+            cursor: "pointer",
+          }}
+        >
+          View My Work →
+        </button>
+
+        <a
+          href={CV_DOWNLOAD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            border: "1px solid rgba(255,255,255,0.16)",
+            background: "rgba(255,255,255,0.08)",
+            color: "#ffffff",
+
+            borderRadius: 999,
+
+            padding: "12px 28px",
+
+            fontSize: 14,
+            textDecoration: "none",
+            fontWeight: 500,
+          }}
+        >
+          Download CV ↓
+        </a>
+      </div>
+
+      {/* DOTS */}
 
       <div
         style={{
