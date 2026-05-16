@@ -24,11 +24,7 @@ const techLogos: TechLogo[] = [
   { src: "/json.jpg", label: "JSON" },
   { src: "/mongodb.jpg", label: "MongoDB" },
   { src: "/karma-jasmine.jpg", label: "Karma & Jasmine" },
-  // { src: "/ngrx-logo.jpg", label: "NgRx" },
-];
-
-const techExtras: TechLogo[] = [
-  { src: "/bootstrap.jpg", label: "Bootstrap" },
+  { src: "/ngrx-logo.jpg", label: "NgRx" },
   { src: "/github.png", label: "GitHub" },
   { src: "/ci-cd.png", label: "CI/CD" },
 ];
@@ -171,23 +167,35 @@ const Hero = () => {
           <h3 style={{ color: "#fff", fontSize: 20, fontWeight: 700, textAlign: "center", margin: 0 }}>
             My Tech Stack
           </h3>
-          <div className="tech-grid" style={{ width: "100%", maxWidth: 800, margin: "0 auto" }}>
+          <div
+            className="tech-grid"
+            style={{
+              width: "100%",
+              maxWidth: 860,
+              margin: "0 auto",
+              display: "grid",
+              gridTemplateColumns: "repeat(7, 1fr)",
+              gap: 20,
+            }}
+          >
             {techLogos.map((t) => (
               <TechItem key={t.label} src={t.src} label={t.label} textPill={t.textPill} />
             ))}
           </div>
-          <div
-            style={{
-              display: "inline-flex",
-              gap: 24,
-              justifyContent: "center",
-              alignItems: "flex-start",
-              marginTop: 4,
-            }}
-          >
-            {techExtras.map((t) => (
-              <TechItem key={t.label} src={t.src} label={t.label} />
-            ))}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, marginTop: 16 }}>
+            <img
+              src="/bootstrap.jpg"
+              alt="Bootstrap"
+              style={{
+                width: 52,
+                height: 52,
+                objectFit: "contain",
+                filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.35))",
+              }}
+            />
+            <span style={{ fontSize: 10, color: "rgba(255,255,255,0.60)", textAlign: "center" }}>
+              Bootstrap
+            </span>
           </div>
         </div>
         <SlideOverlay
@@ -245,9 +253,9 @@ const Hero = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center 15%",
-                transform: "scale(1.15)",
-                borderRadius: "50%",
+                objectPosition: "center 8%",
+                transform: "scale(1.0)",
+                display: "block",
               }}
               onError={(e) => {
                 const el = e.currentTarget;
