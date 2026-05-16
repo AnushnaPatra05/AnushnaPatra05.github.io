@@ -527,20 +527,19 @@ const Hero = () => {
               flex-direction: column;
 
               text-align: center;
+  gap: 24px;
 
-              gap: 28px;
-
-              padding:
-                90px
-                24px
-                350px;
+  padding:
+    40px
+    24px
+    350px;
             }
 
             .profile-image-wrap {
               width: 190px;
               height: 190px;
 
-              margin-top: 60px;
+              margin-top: 315px;
             }
 
             .profile-image {
@@ -558,15 +557,21 @@ const Hero = () => {
             .hero-tags {
               justify-content: center;
             }
+                  
+          .cts-logo-wrap {
+            position: absolute;
 
-            .cts-logo-wrap {
-              top: 24px;
-              right: 24px;
-            }
+            top: 42px;
+            right: 60px;
 
-            .cts-logo {
-              height: 28px;
-            }
+            z-index: 5;
+          }
+
+          .cts-logo {
+            height: 34px;
+            object-fit: contain;
+            opacity: 0.92;
+          }
 
             /* ====================================== */
             /* MOBILE COGNIZANT FIX */
