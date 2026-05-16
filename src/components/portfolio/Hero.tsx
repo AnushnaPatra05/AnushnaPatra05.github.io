@@ -115,7 +115,7 @@ const Hero = () => {
           }}
         >
           <img
-            src="public/ctslogo.jpg"
+            src="/ctslogo.jpg"
             alt="Cognizant"
             style={{ height: 28, width: "auto", objectFit: "contain", opacity: 0.9 }}
             onError={(e) => {
