@@ -73,13 +73,17 @@ const Hero = () => {
       id="hero"
       style={{
         position: "relative",
-        height: "100vh",
         width: "100%",
+        height: "100vh",
+        minHeight: "720px",
         overflow: "hidden",
         background: "#0B1020",
       }}
     >
-      {/* LEFT ARROW */}
+      {/* ========================================================= */}
+      {/* ARROWS */}
+      {/* ========================================================= */}
+
       <button
         onClick={goPrev}
         aria-label="Previous Slide"
@@ -88,7 +92,6 @@ const Hero = () => {
         <ChevronLeft className="w-5 h-5" />
       </button>
 
-      {/* RIGHT ARROW */}
       <button
         onClick={goNext}
         aria-label="Next Slide"
@@ -111,124 +114,49 @@ const Hero = () => {
           }}
         />
 
-        <div
-          className="profile-content"
-          style={{
-            position: "absolute",
-            inset: 0,
-            padding: "120px 80px 240px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 64,
-            zIndex: 2,
-          }}
-        >
-          {/* PROFILE IMAGE */}
-          <div
-            style={{
-              width: 260,
-              height: 260,
-              borderRadius: "50%",
-              overflow: "hidden",
-              flexShrink: 0,
-              border: "2px solid rgba(62,207,164,0.45)",
-              background: "rgba(255,255,255,0.04)",
-              boxShadow:
-                "0 0 40px rgba(62,207,164,0.15), 0 0 80px rgba(168,85,247,0.15)",
-            }}
-          >
+        <div className="hero-about-container">
+          {/* IMAGE */}
+
+          <div className="profile-image-wrap">
             <img
               src="/photoANUSHNA.jpg"
               alt="Anushna Patra"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center top",
-                transform: "scale(1.08)",
-              }}
+              className="profile-image"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}
             />
           </div>
 
-          {/* TEXT */}
-          <div
-            style={{
-              maxWidth: 480,
-              display: "flex",
-              flexDirection: "column",
-              gap: 18,
-            }}
-          >
-            <div
-              style={{
-                color: "#3ECFA4",
-                fontSize: 15,
-                fontWeight: 600,
-                letterSpacing: "0.12em",
-              }}
-            >
+          {/* CONTENT */}
+
+          <div className="hero-about-content">
+            <div className="hero-small-title">
               PROGRAMMER ANALYST
             </div>
 
-            <h2
-              style={{
-                color: "#ffffff",
-                fontSize: 48,
-                lineHeight: 1.1,
-                margin: 0,
-                fontWeight: 800,
-              }}
-            >
-              Building modern,
+            <h2 className="hero-heading">
+              Building scalable
               <br />
-              scalable Angular apps.
+              Angular experiences.
             </h2>
 
-            <p
-              style={{
-                color: "rgba(255,255,255,0.72)",
-                lineHeight: 1.8,
-                fontSize: 15,
-                margin: 0,
-              }}
-            >
+            <p className="hero-description">
               Frontend Engineer with 3+ years of experience building
               enterprise-grade Angular applications at Cognizant.
-              Passionate about performance, reactive architecture,
-              clean UI systems, and scalable frontend engineering.
+              Passionate about reactive architecture, clean UI systems,
+              accessibility, and scalable frontend engineering.
             </p>
 
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 10,
-                marginTop: 8,
-              }}
-            >
+            <div className="hero-tags">
               {[
                 "3+ Years Experience",
                 "Angular Expert",
                 "RxJS & NgRx",
                 "Kolkata, India",
-              ].map((item) => (
-                <span
-                  key={item}
-                  style={{
-                    padding: "8px 14px",
-                    borderRadius: 999,
-                    background: "rgba(62,207,164,0.08)",
-                    border: "1px solid rgba(62,207,164,0.18)",
-                    color: "#3ECFA4",
-                    fontSize: 12,
-                    fontWeight: 500,
-                  }}
-                >
-                  {item}
+              ].map((tag) => (
+                <span key={tag} className="hero-tag">
+                  {tag}
                 </span>
               ))}
             </div>
@@ -247,43 +175,21 @@ const Hero = () => {
       {/* ========================================================= */}
 
       <Slide active={activeIndex === 1}>
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "url(/ctsoffice.jpg)",
-            backgroundSize: "110%",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            filter: "brightness(0.82)",
-          }}
-        />
+        {/* IMAGE */}
 
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.30) 45%, rgba(0,0,0,0.12) 100%)",
-          }}
-        />
+        <div className="cognizant-image" />
 
-        <div
-          style={{
-            position: "absolute",
-            top: 42,
-            right: 60,
-            zIndex: 3,
-          }}
-        >
+        {/* OVERLAY */}
+
+        <div className="cognizant-overlay" />
+
+        {/* LOGO */}
+
+        <div className="cts-logo-wrap">
           <img
             src="/ctslogo.jpg"
             alt="Cognizant"
-            style={{
-              height: 34,
-              objectFit: "contain",
-              opacity: 0.92,
-            }}
+            className="cts-logo"
           />
         </div>
 
@@ -299,51 +205,12 @@ const Hero = () => {
       {/* ========================================================= */}
 
       <Slide active={activeIndex === 2}>
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(135deg, #0b1020 0%, #141b34 50%, #1C1C1E 100%)",
-          }}
-        />
+        <div className="tech-background" />
 
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            padding: "120px 60px 240px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 2,
-          }}
-        >
-          <h3
-            style={{
-              color: "#ffffff",
-              fontSize: 30,
-              fontWeight: 700,
-              marginBottom: 50,
-              letterSpacing: "0.04em",
-            }}
-          >
-            My Tech Stack
-          </h3>
+        <div className="tech-stack-container">
+          <h3 className="tech-title">My Tech Stack</h3>
 
-          <div
-            style={{
-              width: "100%",
-              maxWidth: 980,
-              display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fit, minmax(120px, 1fr))",
-              gap: "38px 28px",
-              justifyItems: "center",
-              alignItems: "start",
-            }}
-          >
+          <div className="tech-grid">
             {techLogos.map((tech) => (
               <TechItem
                 key={tech.label}
@@ -361,46 +228,350 @@ const Hero = () => {
         />
       </Slide>
 
+      {/* ========================================================= */}
       {/* DOWN ICON */}
+      {/* ========================================================= */}
 
-      <a
-        href="#skills"
-        style={{
-          position: "absolute",
-          bottom: 20,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 20,
-          color: "#3ECFA4",
-          animation: "bounce 2s infinite",
-        }}
-      >
+      <a href="#skills" className="scroll-down">
         <ChevronDown className="w-6 h-6" />
       </a>
 
+      {/* ========================================================= */}
       {/* RESPONSIVE CSS */}
+      {/* ========================================================= */}
+
       <style>
         {`
-          @media (max-width: 900px) {
-            .profile-content {
-              flex-direction: column !important;
-              text-align: center;
-              padding: 100px 24px 240px !important;
-              gap: 32px !important;
-            }
+          /* ======================================================= */
+          /* ABOUT SECTION */
+          /* ======================================================= */
+
+          .hero-about-container {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 72px;
+
+            padding: 120px 80px 260px;
+          }
+
+          .profile-image-wrap {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            border: 2px solid rgba(62,207,164,0.45);
+
+            background: rgba(255,255,255,0.04);
+
+            box-shadow:
+              0 0 40px rgba(62,207,164,0.15),
+              0 0 80px rgba(168,85,247,0.15);
+          }
+
+          .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transform: scale(1.08);
+          }
+
+          .hero-about-content {
+            max-width: 520px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+          }
+
+          .hero-small-title {
+            color: #3ECFA4;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+          }
+
+          .hero-heading {
+            color: #ffffff;
+            font-size: 54px;
+            line-height: 1.08;
+            font-weight: 800;
+            margin: 0;
+          }
+
+          .hero-description {
+            color: rgba(255,255,255,0.72);
+            font-size: 15px;
+            line-height: 1.9;
+            margin: 0;
+          }
+
+          .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+          }
+
+          .hero-tag {
+            padding: 8px 14px;
+            border-radius: 999px;
+
+            background: rgba(62,207,164,0.08);
+            border: 1px solid rgba(62,207,164,0.18);
+
+            color: #3ECFA4;
+            font-size: 12px;
+            font-weight: 500;
+          }
+
+          /* ======================================================= */
+          /* COGNIZANT */
+          /* ======================================================= */
+
+          .cognizant-image {
+            position: absolute;
+            inset: 0;
+
+            background-image: url('/ctsoffice.jpg');
+            background-repeat: no-repeat;
+
+            /* IMPORTANT FIX */
+            background-size: contain;
+            background-position: center center;
+
+            background-color: #0B1020;
+          }
+
+          .cognizant-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+              linear-gradient(
+                to top,
+                rgba(0,0,0,0.88) 0%,
+                rgba(0,0,0,0.35) 45%,
+                rgba(0,0,0,0.18) 100%
+              );
+          }
+
+          .cts-logo-wrap {
+            position: absolute;
+            top: 42px;
+            right: 60px;
+            z-index: 5;
+          }
+
+          .cts-logo {
+            height: 34px;
+            object-fit: contain;
+            opacity: 0.92;
+          }
+
+          /* ======================================================= */
+          /* TECH STACK */
+          /* ======================================================= */
+
+          .tech-background {
+            position: absolute;
+            inset: 0;
+
+            background:
+              linear-gradient(
+                135deg,
+                #0b1020 0%,
+                #141b34 50%,
+                #1C1C1E 100%
+              );
+          }
+
+          .tech-stack-container {
+            position: absolute;
+            inset: 0;
+
+            z-index: 2;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding:
+              120px
+              50px
+              320px;
+          }
+
+          .tech-title {
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+
+            margin-bottom: 50px;
+            letter-spacing: 0.04em;
+          }
+
+          .tech-grid {
+            width: 100%;
+            max-width: 1050px;
+
+            display: grid;
+
+            grid-template-columns:
+              repeat(auto-fit, minmax(110px, 1fr));
+
+            gap: 34px 26px;
+
+            justify-items: center;
+            align-items: center;
+          }
+
+          /* ======================================================= */
+          /* SCROLL ICON */
+          /* ======================================================= */
+
+          .scroll-down {
+            position: absolute;
+            left: 50%;
+            bottom: 18px;
+
+            transform: translateX(-50%);
+
+            z-index: 30;
+
+            color: #3ECFA4;
+
+            animation: bounce 2s infinite;
           }
 
           @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-              transform: translate(-50%, 0);
+            0%,20%,50%,80%,100% {
+              transform: translate(-50%,0);
             }
 
             40% {
-              transform: translate(-50%, -10px);
+              transform: translate(-50%,-10px);
             }
 
             60% {
-              transform: translate(-50%, -5px);
+              transform: translate(-50%,-5px);
+            }
+          }
+
+          /* ======================================================= */
+          /* TABLET */
+          /* ======================================================= */
+
+          @media (max-width: 1024px) {
+
+            .hero-about-container {
+              gap: 42px;
+              padding:
+                100px
+                40px
+                300px;
+            }
+
+            .hero-heading {
+              font-size: 44px;
+            }
+
+            .profile-image-wrap {
+              width: 220px;
+              height: 220px;
+            }
+
+            .tech-stack-container {
+              padding:
+                100px
+                30px
+                380px;
+            }
+
+            .tech-grid {
+              grid-template-columns:
+                repeat(auto-fit, minmax(100px, 1fr));
+
+              gap: 28px 20px;
+            }
+          }
+
+          /* ======================================================= */
+          /* MOBILE */
+          /* ======================================================= */
+
+          @media (max-width: 768px) {
+
+            #hero {
+              min-height: 900px !important;
+            }
+
+            .hero-about-container {
+              flex-direction: column;
+
+              text-align: center;
+
+              gap: 28px;
+
+              padding:
+                90px
+                24px
+                340px;
+            }
+
+            .hero-about-content {
+              align-items: center;
+            }
+
+            .hero-heading {
+              font-size: 36px;
+            }
+
+            .hero-description {
+              font-size: 14px;
+            }
+
+            .profile-image-wrap {
+              width: 180px;
+              height: 180px;
+            }
+
+            .cts-logo-wrap {
+              right: 24px;
+              top: 24px;
+            }
+
+            .cts-logo {
+              height: 28px;
+            }
+
+            .tech-stack-container {
+              justify-content: flex-start;
+
+              padding:
+                100px
+                20px
+                380px;
+            }
+
+            .tech-title {
+              font-size: 24px;
+              margin-bottom: 34px;
+            }
+
+            .tech-grid {
+              grid-template-columns:
+                repeat(3, 1fr);
+
+              gap: 22px 10px;
             }
           }
         `}
@@ -421,26 +592,33 @@ const TechItem = ({
   return (
     <div
       style={{
-        width: 110,
+        width: "100%",
+        maxWidth: 110,
+
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: 14,
+
+        gap: 12,
       }}
     >
       <div
         style={{
-          width: 76,
-          height: 76,
-          borderRadius: 20,
+          width: 74,
+          height: 74,
+
+          borderRadius: 18,
+
           background: "rgba(255,255,255,0.04)",
           border: "1px solid rgba(255,255,255,0.08)",
+
           backdropFilter: "blur(10px)",
+
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+
           boxShadow: "0 6px 24px rgba(0,0,0,0.25)",
-          transition: "all 0.25s ease",
         }}
       >
         {!errored && src ? (
@@ -449,8 +627,8 @@ const TechItem = ({
             alt={label}
             onError={() => setErrored(true)}
             style={{
-              width: 44,
-              height: 44,
+              width: 42,
+              height: 42,
               objectFit: "contain",
             }}
           />
@@ -461,11 +639,11 @@ const TechItem = ({
 
       <span
         style={{
-          color: "rgba(255,255,255,0.75)",
+          color: "rgba(255,255,255,0.72)",
           fontSize: 12,
           fontWeight: 500,
-          textAlign: "center",
           lineHeight: 1.5,
+          textAlign: "center",
         }}
       >
         {label}
@@ -487,25 +665,32 @@ const SlideOverlay = ({
     <div
       style={{
         position: "absolute",
-        bottom: 0,
         left: 0,
         right: 0,
+        bottom: 0,
+
         zIndex: 10,
-        padding: "40px 0 60px",
+
+        padding: "40px 20px 60px",
+
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+
         gap: 14,
+
+        textAlign: "center",
+
         background:
-          "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)",
+          "linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)",
       }}
     >
       <div
         style={{
           color: "#3ECFA4",
           fontSize: 11,
-          letterSpacing: "0.16em",
           fontWeight: 600,
+          letterSpacing: "0.16em",
         }}
       >
         {slideLabels[activeIndex]}
@@ -514,11 +699,13 @@ const SlideOverlay = ({
       <h1
         style={{
           margin: 0,
-          fontSize: 58,
+          fontSize: "clamp(42px, 6vw, 62px)",
           fontWeight: 800,
           lineHeight: 1,
-          textAlign: "center",
-          background: "linear-gradient(90deg, #3ECFA4, #a855f7)",
+
+          background:
+            "linear-gradient(90deg, #3ECFA4 0%, #a855f7 100%)",
+
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
         }}
@@ -529,7 +716,7 @@ const SlideOverlay = ({
       <div
         style={{
           position: "relative",
-          height: 36,
+          height: 34,
           width: "100%",
           overflow: "hidden",
         }}
@@ -543,15 +730,20 @@ const SlideOverlay = ({
               style={{
                 position: "absolute",
                 inset: 0,
+
                 textAlign: "center",
-                fontSize: 22,
+
                 color: "#3ECFA4",
+                fontSize: "clamp(18px, 2vw, 24px)",
+
                 opacity: active ? 1 : 0,
+
                 transform: active
                   ? "translateY(0)"
                   : index < activeIndex
                   ? "translateY(-100%)"
                   : "translateY(100%)",
+
                 transition: "all 300ms ease",
               }}
             >
@@ -563,9 +755,10 @@ const SlideOverlay = ({
 
       <div
         style={{
-          width: 52,
+          width: 54,
           height: 3,
           borderRadius: 999,
+
           background:
             "linear-gradient(90deg, #3ECFA4 0%, #a855f7 100%)",
         }}
@@ -576,9 +769,10 @@ const SlideOverlay = ({
       <div
         style={{
           display: "flex",
-          gap: 14,
           flexWrap: "wrap",
           justifyContent: "center",
+
+          gap: 14,
         }}
       >
         <button
@@ -587,10 +781,14 @@ const SlideOverlay = ({
             border: "1.5px solid #3ECFA4",
             background: "transparent",
             color: "#3ECFA4",
+
             borderRadius: 999,
-            padding: "12px 30px",
+
+            padding: "12px 28px",
+
             fontSize: 14,
             fontWeight: 600,
+
             cursor: "pointer",
           }}
         >
@@ -605,8 +803,11 @@ const SlideOverlay = ({
             border: "1px solid rgba(255,255,255,0.16)",
             background: "rgba(255,255,255,0.08)",
             color: "#ffffff",
+
             borderRadius: 999,
-            padding: "12px 30px",
+
+            padding: "12px 28px",
+
             fontSize: 14,
             textDecoration: "none",
             fontWeight: 500,
@@ -616,13 +817,13 @@ const SlideOverlay = ({
         </a>
       </div>
 
-      {/* INDICATORS */}
+      {/* DOTS */}
 
       <div
         style={{
           display: "flex",
           gap: 8,
-          marginTop: 6,
+          marginTop: 4,
         }}
       >
         {[0, 1, 2].map((index) => {
@@ -635,12 +836,17 @@ const SlideOverlay = ({
               style={{
                 width: active ? 28 : 8,
                 height: 8,
+
                 borderRadius: 999,
+
                 border: "none",
+
                 background: active
                   ? "linear-gradient(90deg, #3ECFA4, #a855f7)"
-                  : "rgba(255,255,255,0.30)",
+                  : "rgba(255,255,255,0.32)",
+
                 cursor: "pointer",
+
                 transition: "all 300ms ease",
               }}
             />
@@ -663,8 +869,11 @@ const Slide = ({
       style={{
         position: "absolute",
         inset: 0,
+
         opacity: active ? 1 : 0,
+
         transition: "opacity 500ms ease",
+
         pointerEvents: active ? "auto" : "none",
       }}
     >
@@ -679,18 +888,28 @@ const arrowStyle = (
   position: "absolute",
   top: "50%",
   transform: "translateY(-50%)",
+
   zIndex: 20,
-  width: 44,
-  height: 44,
+
+  width: 46,
+  height: 46,
+
   borderRadius: "50%",
-  border: "1px solid rgba(255,255,255,0.10)",
+
+  border: "1px solid rgba(255,255,255,0.12)",
+
   background: "rgba(255,255,255,0.06)",
+
   color: "#ffffff",
+
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+
   cursor: "pointer",
-  backdropFilter: "blur(8px)",
+
+  backdropFilter: "blur(10px)",
+
   [side]: 24,
 });
 
