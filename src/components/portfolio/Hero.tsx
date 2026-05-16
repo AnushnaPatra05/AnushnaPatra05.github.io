@@ -15,23 +15,22 @@ type TechLogo = { src?: string; label: string; textPill?: { text: string; color:
 const techLogos: TechLogo[] = [
   { src: "/angular.jpg", label: "Angular" },
   { src: "/rxjs.jpg", label: "RxJS" },
-  { src: "/ts.jpg", label: "TypeScript" },
-  {
-    label: "JavaScript",
-    textPill: {
-      text: "JS",
-      color: "#f7df1e",
-      bg: "rgba(247,223,30,0.10)",
-      border: "rgba(247,223,30,0.25)",
-    },
-  },
+  { src: "/ts.jpg", label: "JS & TS" },
+  { src: "/css.jpg", label: "SCSS & CSS" },
+  { src: "/CSS-Logo-2011.png", label: "CSS3" },
   { src: "/html.jpg", label: "HTML5" },
-  { src: "/css.jpg", label: "CSS3" },
   { src: "/nodejs.jpg", label: "Node.js" },
   { src: "/restapi.jpg", label: "REST API" },
   { src: "/json.jpg", label: "JSON" },
   { src: "/mongodb.jpg", label: "MongoDB" },
   { src: "/karma-jasmine.jpg", label: "Karma & Jasmine" },
+  { src: "/ngrx-logo.jpg", label: "NgRx" },
+];
+
+const techExtras: TechLogo[] = [
+  { src: "/bootstrap.jpg", label: "Bootstrap" },
+  { src: "/github.png", label: "GitHub" },
+  { src: "/ci-cd.png", label: "CI/CD" },
 ];
 
 const SLIDE_COUNT = 3;
