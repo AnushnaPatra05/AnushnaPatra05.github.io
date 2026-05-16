@@ -36,10 +36,7 @@ const techLogos: TechLogo[] = [
   { src: "/json.jpg", label: "JSON" },
   { src: "/mongodb.jpg", label: "MongoDB" },
   { src: "/karma-jasmine.jpg", label: "Karma & Jasmine" },
-
-  // IMPORTANT
   { src: "/NGRX.jpg", label: "NgRx" },
-
   { src: "/bootstrap.jpg", label: "Bootstrap" },
   { src: "/github.png", label: "GitHub" },
   { src: "/ci-cd.png", label: "CI/CD" },
@@ -84,9 +81,7 @@ const Hero = () => {
         background: "#0B1020",
       }}
     >
-      {/* ====================================== */}
       {/* ARROWS */}
-      {/* ====================================== */}
 
       <button
         onClick={goPrev}
@@ -112,8 +107,6 @@ const Hero = () => {
         <div className="hero-bg" />
 
         <div className="hero-about-container">
-          {/* PROFILE IMAGE */}
-
           <div className="profile-image-wrap">
             <img
               src="/photoANUSHNA.jpg"
@@ -121,8 +114,6 @@ const Hero = () => {
               className="profile-image"
             />
           </div>
-
-          {/* CONTENT */}
 
           <div className="hero-about-content">
             <div className="hero-small-title">
@@ -216,9 +207,7 @@ const Hero = () => {
         />
       </Slide>
 
-      {/* ====================================== */}
-      {/* SCROLL ICON */}
-      {/* ====================================== */}
+      {/* SCROLL DOWN */}
 
       <a href="#skills" className="scroll-down">
         <ChevronDown className="w-6 h-6" />
@@ -230,10 +219,6 @@ const Hero = () => {
 
       <style>
         {`
-          /* ====================================== */
-          /* GLOBAL BACKGROUND */
-          /* ====================================== */
-
           .hero-bg {
             position: absolute;
             inset: 0;
@@ -248,7 +233,7 @@ const Hero = () => {
           }
 
           /* ====================================== */
-          /* ABOUT SECTION */
+          /* ABOUT */
           /* ====================================== */
 
           .hero-about-container {
@@ -278,8 +263,6 @@ const Hero = () => {
 
             flex-shrink: 0;
 
-            margin-top: 40px;
-
             border:
               2px solid rgba(62,207,164,0.45);
 
@@ -296,10 +279,7 @@ const Hero = () => {
 
             object-fit: cover;
 
-            /* FIXED */
             object-position: center 12%;
-
-            transform: scale(1);
           }
 
           .hero-about-content {
@@ -373,7 +353,6 @@ const Hero = () => {
 
             background-size: cover;
 
-            /* FIXED */
             background-position: center 22%;
 
             transform: scale(1.01);
@@ -524,10 +503,6 @@ const Hero = () => {
             .hero-heading {
               font-size: 46px;
             }
-
-            .tech-stack-container {
-              padding-bottom: 450px;
-            }
           }
 
           /* ====================================== */
@@ -553,6 +528,7 @@ const Hero = () => {
                 350px;
             }
 
+            /* IMPORTANT FIX */
             .profile-image-wrap {
               width: 190px;
               height: 190px;
@@ -589,7 +565,7 @@ const Hero = () => {
               padding:
                 90px
                 18px
-                520px;
+                340px;
             }
 
             .tech-title {
@@ -659,10 +635,7 @@ const TechItem = ({
           <img
             src={src}
             alt={label}
-            onError={() => {
-              console.log("IMAGE FAILED:", src);
-              setErrored(true);
-            }}
+            onError={() => setErrored(true)}
             style={{
               width: 42,
               height: 42,
@@ -693,6 +666,9 @@ const SlideOverlay = ({
   setActiveIndex,
   scrollToProjects,
 }: any) => {
+
+  const showHeroText = activeIndex === 0;
+
   return (
     <div
       style={{
@@ -703,18 +679,22 @@ const SlideOverlay = ({
 
         zIndex: 10,
 
-        padding: "40px 20px 60px",
+        padding: showHeroText
+          ? "40px 20px 60px"
+          : "24px 20px 40px",
 
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
 
-        gap: 14,
+        gap: showHeroText ? 14 : 10,
 
         textAlign: "center",
 
         background:
-          "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)",
+          activeIndex === 0
+            ? "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)"
+            : "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 100%)",
       }}
     >
       <div
@@ -728,37 +708,41 @@ const SlideOverlay = ({
         {slideLabels[activeIndex]}
       </div>
 
-      <h1
-        style={{
-          margin: 0,
+      {showHeroText && (
+        <>
+          <h1
+            style={{
+              margin: 0,
 
-          fontSize: "clamp(34px, 6vw, 62px)",
+              fontSize: "clamp(34px, 6vw, 62px)",
 
-          fontWeight: 800,
+              fontWeight: 800,
 
-          lineHeight: 1,
+              lineHeight: 1,
 
-          background:
-            "linear-gradient(90deg, #3ECFA4 0%, #a855f7 100%)",
+              background:
+                "linear-gradient(90deg, #3ECFA4 0%, #a855f7 100%)",
 
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
-      >
-        Anushna Patra
-      </h1>
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Anushna Patra
+          </h1>
 
-      <div
-        style={{
-          color: "#3ECFA4",
+          <div
+            style={{
+              color: "#3ECFA4",
 
-          fontSize: "clamp(16px, 2vw, 24px)",
+              fontSize: "clamp(16px, 2vw, 24px)",
 
-          minHeight: 28,
-        }}
-      >
-        {roles[activeIndex]}
-      </div>
+              minHeight: 28,
+            }}
+          >
+            {roles[activeIndex]}
+          </div>
+        </>
+      )}
 
       {/* BUTTONS */}
 
@@ -769,7 +753,7 @@ const SlideOverlay = ({
           justifyContent: "center",
 
           gap: 14,
-          marginTop: 8,
+          marginTop: showHeroText ? 8 : 2,
         }}
       >
         <button
