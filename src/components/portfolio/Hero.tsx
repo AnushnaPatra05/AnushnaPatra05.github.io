@@ -241,13 +241,15 @@ const Hero = () => {
             }}
           >
             <img
-              src="public/dp.png"
+              src="/photoANUSHNA.jpg"
               alt="Anushna Patra"
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
                 objectPosition: "center top",
+                transform: "scale(1.3)",
+                borderRadius: "50%",
               }}
               onError={(e) => {
                 const el = e.currentTarget;
