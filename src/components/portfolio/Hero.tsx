@@ -224,8 +224,8 @@ const Hero = () => {
           <div
             className="profile-photo-wrap"
             style={{
-              width: 220,
-              height: 220,
+              width: 240,
+              height: 240,
               borderRadius: "50%",
               overflow: "hidden",
               border: "2px solid rgba(62,207,164,0.50)",
@@ -245,8 +245,8 @@ const Hero = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center top",
-                transform: "scale(1.3)",
+                objectPosition: "center 15%",
+                transform: "scale(1.15)",
                 borderRadius: "50%",
               }}
               onError={(e) => {
