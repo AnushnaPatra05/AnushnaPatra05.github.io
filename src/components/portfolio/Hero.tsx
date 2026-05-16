@@ -81,7 +81,9 @@ const Hero = () => {
         background: "#0B1020",
       }}
     >
+      {/* ====================================== */}
       {/* ARROWS */}
+      {/* ====================================== */}
 
       <button
         onClick={goPrev}
@@ -207,7 +209,9 @@ const Hero = () => {
         />
       </Slide>
 
+      {/* ====================================== */}
       {/* SCROLL DOWN */}
+      {/* ====================================== */}
 
       <a href="#skills" className="scroll-down">
         <ChevronDown className="w-6 h-6" />
@@ -351,11 +355,17 @@ const Hero = () => {
 
             background-repeat: no-repeat;
 
-            background-size: cover;
+            background-size: contain;
 
-            background-position: center 22%;
+            background-position: center center;
 
-            transform: scale(1.01);
+            background-color: #0B1020;
+
+            image-rendering: auto;
+
+            transform: scale(1.005);
+
+            will-change: transform;
           }
 
           .cognizant-overlay {
@@ -375,8 +385,6 @@ const Hero = () => {
                 rgba(11,16,32,0.40),
                 rgba(11,16,32,0.12)
               );
-
-            backdrop-filter: blur(1.5px);
           }
 
           .cts-logo-wrap {
@@ -528,7 +536,6 @@ const Hero = () => {
                 350px;
             }
 
-            /* IMPORTANT FIX */
             .profile-image-wrap {
               width: 190px;
               height: 190px;
@@ -559,6 +566,16 @@ const Hero = () => {
 
             .cts-logo {
               height: 28px;
+            }
+
+            /* MOBILE FIX FOR COGNIZANT */
+
+            .cognizant-image {
+              background-size: cover;
+
+              background-position: center top;
+
+              transform: scale(1);
             }
 
             .tech-stack-container {
@@ -744,8 +761,6 @@ const SlideOverlay = ({
         </>
       )}
 
-      {/* BUTTONS */}
-
       <div
         style={{
           display: "flex",
@@ -797,8 +812,6 @@ const SlideOverlay = ({
           Download CV ↓
         </a>
       </div>
-
-      {/* DOTS */}
 
       <div
         style={{
