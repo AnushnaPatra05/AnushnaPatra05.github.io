@@ -35,7 +35,7 @@ const techLogos: TechLogo[] = [
   { src: "/json.jpg", label: "JSON" },
   { src: "/mongodb.jpg", label: "MongoDB" },
   { src: "/karma-jasmine.jpg", label: "Karma & Jasmine" },
-  { src: "/ngrx-logo.jpg", label: "NgRx" },
+  { src: "/NGRX.jpg", label: "NgRx" },
   { src: "/bootstrap.jpg", label: "Bootstrap" },
   { src: "/github.png", label: "GitHub" },
   { src: "/ci-cd.png", label: "CI/CD" },
