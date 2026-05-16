@@ -237,7 +237,7 @@ const Hero = () => {
             padding:
               100px
               80px
-              240px;
+              220px;
 
             z-index: 2;
           }
@@ -359,7 +359,7 @@ const Hero = () => {
               );
           }
 
-          /* TECH STACK */
+          /* TECH */
 
           .tech-background {
             position: absolute;
@@ -399,9 +399,9 @@ const Hero = () => {
             justify-content: flex-start;
 
             padding:
-              100px
+              90px
               50px
-              390px;
+              320px;
           }
 
           .tech-title {
@@ -454,9 +454,9 @@ const Hero = () => {
               gap: 42px;
 
               padding:
-                100px
+                90px
                 40px
-                260px;
+                220px;
             }
 
             .hero-heading {
@@ -469,7 +469,7 @@ const Hero = () => {
           @media (max-width: 768px) {
 
             #hero {
-              min-height: 980px !important;
+              min-height: 930px !important;
             }
 
             .hero-about-container {
@@ -477,19 +477,19 @@ const Hero = () => {
 
               text-align: center;
 
-              gap: 24px;
+              gap: 22px;
 
               padding:
-                40px
+                30px
                 24px
-                300px;
+                230px;
             }
 
             .profile-image-wrap {
-              width: 190px;
-              height: 190px;
+              width: 180px;
+              height: 180px;
 
-              margin-top: 18px;
+              margin-top: 10px;
             }
 
             .profile-image {
@@ -497,11 +497,11 @@ const Hero = () => {
             }
 
             .hero-heading {
-              font-size: 36px;
+              font-size: 34px;
             }
 
             .hero-description {
-              font-size: 14px;
+              font-size: 13px;
             }
 
             .hero-tags {
@@ -522,22 +522,22 @@ const Hero = () => {
 
             .tech-stack-container {
               padding:
-                70px
+                60px
                 18px
-                300px;
+                220px;
             }
 
             .tech-title {
-              font-size: 26px;
+              font-size: 24px;
 
-              margin-bottom: 36px;
+              margin-bottom: 30px;
             }
 
             .tech-grid {
               grid-template-columns:
                 repeat(3, 1fr);
 
-              gap: 22px 10px;
+              gap: 18px 8px;
             }
           }
         `}
@@ -565,13 +565,13 @@ const TechItem = ({
         flexDirection: "column",
         alignItems: "center",
 
-        gap: 12,
+        gap: 10,
       }}
     >
       <div
         style={{
-          width: 74,
-          height: 74,
+          width: 70,
+          height: 70,
 
           borderRadius: 18,
 
@@ -596,8 +596,8 @@ const TechItem = ({
             alt={label}
             onError={() => setErrored(true)}
             style={{
-              width: 42,
-              height: 42,
+              width: 40,
+              height: 40,
               objectFit: "contain",
             }}
           />
@@ -609,7 +609,7 @@ const TechItem = ({
       <span
         style={{
           color: "rgba(255,255,255,0.72)",
-          fontSize: 12,
+          fontSize: 11,
           textAlign: "center",
           lineHeight: 1.4,
         }}
@@ -636,34 +636,32 @@ const SlideOverlay = ({
         right: 0,
         bottom: 0,
 
-        transform: "translateY(-10px)",
-
         zIndex: 10,
 
         padding: showHeroText
-          ? "14px 20px 26px"
-          : "14px 20px 22px",
+          ? "8px 18px 18px"
+          : "10px 18px 16px",
 
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
 
-        gap: showHeroText ? 10 : 8,
+        gap: showHeroText ? 8 : 6,
 
         textAlign: "center",
 
         background:
           activeIndex === 0
-            ? "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)"
-            : "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.25) 100%)",
+            ? "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.58) 60%, transparent 100%)"
+            : "linear-gradient(to top, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.20) 100%)",
       }}
     >
       <div
         style={{
           color: "#3ECFA4",
-          fontSize: 10,
+          fontSize: 9,
           fontWeight: 600,
-          letterSpacing: "0.16em",
+          letterSpacing: "0.14em",
         }}
       >
         {slideLabels[activeIndex]}
@@ -675,7 +673,7 @@ const SlideOverlay = ({
             style={{
               margin: 0,
 
-              fontSize: "clamp(28px, 5vw, 54px)",
+              fontSize: "clamp(26px, 5vw, 52px)",
 
               fontWeight: 800,
 
@@ -695,9 +693,9 @@ const SlideOverlay = ({
             style={{
               color: "#3ECFA4",
 
-              fontSize: "clamp(14px, 2vw, 20px)",
+              fontSize: "clamp(13px, 2vw, 18px)",
 
-              minHeight: 22,
+              minHeight: 18,
             }}
           >
             {roles[activeIndex]}
@@ -711,9 +709,7 @@ const SlideOverlay = ({
           flexWrap: "wrap",
           justifyContent: "center",
 
-          gap: 12,
-
-          marginTop: 2,
+          gap: 10,
         }}
       >
         <button
@@ -725,9 +721,9 @@ const SlideOverlay = ({
 
             borderRadius: 999,
 
-            padding: "10px 22px",
+            padding: "9px 18px",
 
-            fontSize: 13,
+            fontSize: 12,
             fontWeight: 600,
 
             cursor: "pointer",
@@ -747,9 +743,9 @@ const SlideOverlay = ({
 
             borderRadius: 999,
 
-            padding: "10px 22px",
+            padding: "9px 18px",
 
-            fontSize: 13,
+            fontSize: 12,
 
             textDecoration: "none",
             fontWeight: 500,
@@ -762,9 +758,7 @@ const SlideOverlay = ({
       <div
         style={{
           display: "flex",
-          gap: 8,
-
-          marginTop: 2,
+          gap: 7,
         }}
       >
         {[0, 1, 2].map((index) => {
@@ -775,8 +769,8 @@ const SlideOverlay = ({
               key={index}
               onClick={() => setActiveIndex(index)}
               style={{
-                width: active ? 24 : 7,
-                height: 7,
+                width: active ? 22 : 6,
+                height: 6,
 
                 borderRadius: 999,
 
@@ -831,8 +825,8 @@ const arrowStyle = (
 
   zIndex: 20,
 
-  width: 46,
-  height: 46,
+  width: 44,
+  height: 44,
 
   borderRadius: "50%",
 
@@ -851,7 +845,7 @@ const arrowStyle = (
 
   backdropFilter: "blur(10px)",
 
-  [side]: 24,
+  [side]: 18,
 });
 
 export default Hero;
